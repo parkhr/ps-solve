@@ -1,4 +1,5 @@
-// Node 순회 시간복잡도는 ?
+// Node 순회 시간복잡도는 = 전체 순환하면 O(n)
+// 전체 시간복잡도는 l1, l2 length 값 = O(n+m) 인듯
 
 class ListNode {
   int val;
