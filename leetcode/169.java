@@ -1,4 +1,5 @@
 class Solution {
+    // O(n)
     public int majorityElement(int[] nums) {
         Map<Integer,Integer> map = new HashMap<>();
         int max = Integer.MIN_VALUE;
@@ -17,5 +18,13 @@ class Solution {
         }
         
         return index;
+    }
+    
+    //===========================================
+    // O(nlogn)
+    
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length/2];
     }
 }
