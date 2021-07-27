@@ -27,4 +27,24 @@ class Solution {
         recu(start+1, n, str.append(")"), list);
         str.deleteCharAt(str.length() -1);
     }
+
+    
+    // =====================================================================================
+    // 백트래킹!! 가지치기 한다. 
+    public void recu(int start, int n, int open, int close, StringBuffer str, List<String> list){
+        if(start == n){
+            list.add(str.toString());
+            return ;
+        }
+
+        if(open < n/2){
+            recu(start+1, n, open+1, close, str.append("("), list);
+            str.deleteCharAt(str.length() -1);   
+        }
+        
+        if(close < open){
+            recu(start+1, n, open, close+1, str.append(")"), list);
+            str.deleteCharAt(str.length() -1);
+        }
+    }
 }
